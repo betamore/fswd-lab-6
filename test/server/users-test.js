@@ -31,4 +31,30 @@ describe('/users', function() {
       .get('/users/login')
       .expect(200);
   });
+
+  describe('when a user exists', function() {
+    var user;
+    beforeEach(function() {
+      return User.create({ username: 'MyFancyUsername',
+                          password: 'MyFancyPassword' })
+              .then(function(u) {
+                user = u;
+              });
+    });
+
+    it('should do …', function() {
+      console.log("User ID is " + user.id);
+      return agent
+        .post('/users/register')
+        .type('form')
+        .send({
+          username: 'MyFancyUsername',
+          password: 'MyFancyPassword',
+          password_confirm: 'MyFancyPassword'
+        })
+        .expect(200, /That username already exists\./);
+    });
+
+  });
+
 });
