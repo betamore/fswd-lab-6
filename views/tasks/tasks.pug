@@ -6,3 +6,5 @@ block body
     each task in tasks
       li
         a(href="/tasks/" + task.id)= task.name
+        if highlightTaskId == task.id
+          p THIS IS THE NEW ONE!
