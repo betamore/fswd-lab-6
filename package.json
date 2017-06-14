@@ -1,7 +1,7 @@
 {
   "name": "fswd-lab-6",
   "version": "1.0.0",
-  "description": "Full Stack Web Development - Lab 3: Wild Wild Web",
+  "description": "Full Stack Web Development - Lab 6: Testing and Pull Requesting",
   "repository": "github:betamore/fswd-lab-6",
   "main": "lib/index.js",
   "scripts": {
