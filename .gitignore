@@ -1,3 +1,6 @@
 node_modules
 public/jspm_packages
 coverage
+.nyc_output
+development.db
+test.db

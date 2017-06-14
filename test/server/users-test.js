@@ -6,8 +6,8 @@ require('../setup');
 var server = require('../../lib/server');
 
 // libraries
-var request = require('supertest-as-promised').agent,
-    User = require('../../models').User;
+var request = require('supertest').agent;
+    // User = require('../../models').User;
 
 describe('/users', function() {
   var agent;
@@ -16,9 +16,9 @@ describe('/users', function() {
     agent = request(server);
   });
 
-  after(function() {
-    return User.truncate();
-  });
+  // after(function() {
+  //   return User.truncate();
+  // });
 
   it('should have a /register page', function() {
     return agent
@@ -32,29 +32,29 @@ describe('/users', function() {
       .expect(200);
   });
 
-  describe('when a user exists', function() {
-    var user;
-    beforeEach(function() {
-      return User.create({ username: 'MyFancyUsername',
-                          password: 'MyFancyPassword' })
-              .then(function(u) {
-                user = u;
-              });
-    });
-
-    it('should do …', function() {
-      console.log("User ID is " + user.id);
-      return agent
-        .post('/users/register')
-        .type('form')
-        .send({
-          username: 'MyFancyUsername',
-          password: 'MyFancyPassword',
-          password_confirm: 'MyFancyPassword'
-        })
-        .expect(200, /That username already exists\./);
-    });
-
-  });
+  // describe('when a user exists', function() {
+  //   var user;
+  //   beforeEach(function() {
+  //     return User.create({ username: 'MyFancyUsername',
+  //                         password: 'MyFancyPassword' })
+  //             .then(function(u) {
+  //               user = u;
+  //             });
+  //   });
+  //
+  //   it('should do …', function() {
+  //     console.log("User ID is " + user.id);
+  //     return agent
+  //       .post('/users/register')
+  //       .type('form')
+  //       .send({
+  //         username: 'MyFancyUsername',
+  //         password: 'MyFancyPassword',
+  //         password_confirm: 'MyFancyPassword'
+  //       })
+  //       .expect(200, /That username already exists\./);
+  //   });
+  //
+  // });
 
 });
