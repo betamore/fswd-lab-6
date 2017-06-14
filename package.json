@@ -9,7 +9,8 @@
     "test": "npm run nyc",
     "start": "node ./lib/index.js",
     "sequelize": "sequelize",
-    "nyc": "nyc mocha",
+    "nyc": "NODE_ENV=test nyc mocha",
+    "coverage": "opn coverage/lcov-report/index.html",
     "mocha": "istanbul cover -x '**/models/index.js' _mocha -- -R spec test/server/*-test.js",
     "dev": "NODE_ENV=development nodemon ./lib/index.js"
   },
