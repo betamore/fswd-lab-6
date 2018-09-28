@@ -44,7 +44,7 @@
   "dependencies": {
     "angular": "^1.6.4",
     "body-parser": "^1.17.2",
-    "connect-redis": "^3.3.0",
+    "connect-redis": "3.3.3",
     "cookie-parser": "^1.4.3",
     "express": "^4.13.4",
     "express-session": "^1.15.3",
