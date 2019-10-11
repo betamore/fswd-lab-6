@@ -47,7 +47,7 @@
     "connect-redis": "^3.3.0",
     "cookie-parser": "^1.4.3",
     "express": "^4.13.4",
-    "express-session": "^1.15.3",
+    "express-session": "^1.17.0",
     "morgan": "^1.8.0",
     "pug": "^2.0.0-rc.2",
     "sequelize": "^4.1.0",
